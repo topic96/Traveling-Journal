@@ -47,7 +47,7 @@ const App = () => {
           <Marker latitude={entry.latitude} longitude={entry.longitude}>
             <div
               onClick={() =>
-                setshowPopup({
+                setShowPopup({
                   // ...showPopup,
                   [entry._id]: true
                 })

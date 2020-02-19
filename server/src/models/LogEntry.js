@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-// const requiredString = {
-//     type: String,
-//     required: true
-// };
+const requiredNumber = {
+  type: Number,
+  required: true
+};
 
 const logEntrySchema = new Schema(
   {
@@ -23,20 +23,18 @@ const logEntrySchema = new Schema(
       default: 0
     },
     latitude: {
-      type: Number,
-      required: true,
+      ...requiredNumber,
       min: -90,
       max: 90
     },
     longitude: {
-      type: Number,
-      required: true,
+      ...requiredNumber,
       min: -180,
       max: 180
     },
     visitDate: {
-      type: Date,
-      required: true
+      required: true,
+      type: Date
     }
   },
   {

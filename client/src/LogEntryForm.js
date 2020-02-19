@@ -8,13 +8,13 @@ const LogEntryForm = ({ location, onClose }) => {
   const [error, setError] = useState(" ");
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async date => {
+  const onSubmit = async data => {
     try {
       setLoading(true);
-      date.latitude = location.latitude;
-      date.longitude = location.longitude;
+      data.latitude = location.latitude;
+      data.longitude = location.longitude;
       await createLogEntry(data);
-      console.log(created);
+      //console.log(created);
       onClose();
     } catch (error) {
       console.log(error);
